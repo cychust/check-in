@@ -1,0 +1,61 @@
+/* pages/userConsole/userConsole.wxss */
+@import "../../style/common.wxss";
+
+.userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 120rpx;
+    /* background-image: url(https://ws4.sinaimg.cn/large/006tKfTcly1g0uedgy9ewj30ku08c745.jpg); *//* background-repeat: no-repeat; *//* background-color: #1296db; */
+    background-color: #fff;
+    background-size: 100% 300rpx;
+    background-position: center;
+    /* text-align: center; */
+    box-sizing: border-box;
+    padding: 5rpx 10rpx;
+	/* display: inline-block */
+}
+
+.userinfo .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    border: 1rpx solid #2c2c2c;
+    box-sizing: border-box;
+}
+
+.userinfo .username {
+	margin-left: 30rpx;
+    color: #2c2c2c;
+    font-size: 38rpx;
+}
+
+.userinfo .edit-img {
+	position: absolute;
+	right: 20rpx;
+    color: #2c2c2c;
+    font-size: 38rpx;
+	width: 38rpx;
+	height: 38rpx;
+}
+
+
+
+.user-feature {
+    width: 100%;
+    margin-top: 15rpx;
+}
+
+.app-info {
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.btn-getInfo {
+    width: 100%;
+    border-radius: 0;
+    background: #fff;
+    font-size: 30rpx;
+    color: #555;
+}

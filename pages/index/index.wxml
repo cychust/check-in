@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class='container'>
+    <view class='tabs'>
+        <van-tabs bind:change="onChange" swipeable>
+            <van-tab title="进行中">
+                <view wx:for="{{joined}}" wx:key="index" class="joined-item" id="{{item.id}}">
+                    <view class="item-l ">
+                        <image src="{{item.image}}" />
+                        <view class="item-number ">
+                            <text class="item-number-text ">{{item.number}}人参与</text>
+                        </view>
+                    </view>
+                    <view class="item-r">
+                        <view class="item-r-detail">
+                            <view class="title ">
+                                <text>{{item.title}}</text>
+                            </view>
+                        </view>
+                        <view class="item-sticky">
+                            <image src="/images/star.png"></image>
+                        </view>
+                        <view class="item-more">
+                            <image src="/images/more.png"></image>
+                        </view>
+                        <view class="item-creator">
+                            <text>发起人  {{item.name}}</text>
+                        </view>
+                        <view class="item-check-in">
+                            <van-button round type="info" size="mini">去签到</van-button>
+                        </view>
+                    </view>
+                </view>
+            </van-tab>
+
+            <van-tab title="未开始 ">
+                <view class='tab2'>
+                    <view class="placeholder">
+                        <image src="/images/placeholder.png"> </image>
+                        <!-- <text>内容为空\n</text> -->
+                        <!-- <text>点击下面的"新建签到"去发起一个新的签到吧</text> -->
+                    </view>
+                </view>
+            </van-tab>
+
+            <van-tab title="已结束 ">
+                <view class='tab2'>
+                    <view class="placeholder">
+                        <image src="/images/placeholder.png"> </image>
+                        <!-- <text>内容为空\n</text> -->
+                        <!-- <text>点击下面的"新建签到"去发起一个新的签到吧</text> -->
+                    </view>
+                </view>
+            </van-tab>
+
+        </van-tabs>
+    </view>
+</view>
