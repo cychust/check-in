@@ -16,11 +16,11 @@
     <!-- 应用信息 -->
     <view class="app-info">
         <van-cell-group>
-            <van-cell title="我的金币" icon="balance-o" is-link size="large" value="1000"/>
-            <van-cell title="我的名片" icon="balance-o" is-link size="large" />
-            <van-cell title="帮助中心" icon="balance-o" is-link size="large" />
+            <van-cell title="我的金币" icon="balance-o" is-link size="large" value="1000" />
+            <van-cell title="我的名片" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/business_card.png" is-link size="large" />
+            <van-cell title="帮助中心" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/help.png" is-link size="large" />
             <van-cell title="公众号怎样使用小程序" icon="balance-o" is-link size="large" />
-            <van-cell title="联系客服" icon="balance-o" is-link size="large" />
+            <van-cell title="联系客服" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/serve.png" is-link size="large" />
         </van-cell-group>
     </view>
 </view>

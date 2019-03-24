@@ -20,7 +20,8 @@
                             <image src="/images/star.png"></image>
                         </view>
                         <view class="item-more">
-                            <image src="/images/more.png"></image>
+                            <image src="/images/more.png" bindtap='moreBtnClicked' 
+							data-item="{{item}}"></image>
                         </view>
                         <view class="item-creator">
                             <text>发起人  {{item.name}}</text>
@@ -53,5 +54,8 @@
             </van-tab>
 
         </van-tabs>
+		<van-popup show="{{show}}" bind:close="popupClose" position="bottom" close-on-click-overlay="true">
+
+		</van-popup>
     </view>
 </view>
