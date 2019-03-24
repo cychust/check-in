@@ -16,10 +16,11 @@
     <!-- 应用信息 -->
     <view class="app-info">
         <van-cell-group>
-            <van-cell title="单元格" icon="balance-o" is-link size="large"/>
-            <van-cell title="小程序版本" value="{{version}}" />
-            <van-cell title="基础库版本" value="{{libVersion}}" />
-            <van-cell title="联系作者" value="{{email}}" />
+            <van-cell title="我的金币" icon="balance-o" is-link size="large" value="1000"/>
+            <van-cell title="我的名片" icon="balance-o" is-link size="large" />
+            <van-cell title="帮助中心" icon="balance-o" is-link size="large" />
+            <van-cell title="公众号怎样使用小程序" icon="balance-o" is-link size="large" />
+            <van-cell title="联系客服" icon="balance-o" is-link size="large" />
         </van-cell-group>
     </view>
 </view>
