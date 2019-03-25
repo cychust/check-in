@@ -1,0 +1,12 @@
+<!--pages/list/index.wxml-->
+<view class="container">
+    <view class="main" height="{windo}">
+        <view class="create-new-check-in">
+            <image src="/images/create-new-check-in.png"></image>
+        </view>
+        <view class="share">
+            <van-cell title="小小签到" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/my_check_in.png" is-link color="blue" size="large" value="推荐给好友" />
+        </view>
+
+    </view>
+</view>

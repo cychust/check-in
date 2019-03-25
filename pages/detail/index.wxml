@@ -1,0 +1,70 @@
+<!--pages/detail/index.wxml-->
+<view class="container">
+
+    <view class="main">
+        <view class="img">
+            <image src="/images/create-new-check-in.png">
+            </image>
+            <view class="return">
+                <image src="/images/star.png"></image>
+            </view>
+            <view class="title">
+                <text>每日英语</text>
+            </view>
+            <view class="share">
+                <image src="/images/star.png"></image>
+            </view>
+            <view class="days">
+                <text>第几天</text>
+            </view>
+            <view class="member-number">
+                <text>几个人参与</text>
+            </view>
+        </view>
+        <view class="manager">
+            <van-cell title="帮助中心" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/help.png" is-link size="large" />
+        </view>
+        <view class="rules">
+            <view class="rules-title">
+                <image src="https://raw.githubusercontent.com/cychust/check-in/master/images/help.png">
+                </image>
+                <text>签到规则</text>
+            </view>
+            <text class="rules-text">* 签到日期</text>
+            <text class="rules-text">* 每日可签到时间</text>
+            <text class="rules-text">* 签到规则:</text>
+            <text class="rules-line"></text>
+        </view>
+        <view class="setting">
+            <van-row>
+                <van-col span="6">
+                    <van-icon name="pending-payment" /> 待付款
+                </van-col>
+                <van-col span="6">
+                    <van-icon name="records" /> 待接单
+                </van-col>
+                <van-col span="6">
+                    <van-icon name="tosend" /> 待发货
+                </van-col>
+                <van-col span="6">
+                    <van-icon name="logistics" /> 已发货
+                </van-col>
+            </van-row>
+        </view>
+        <view class="btn">
+            <van-button type="info"> 签到成功 </van-button>
+        </view>
+        <view class="circleOfDynamic">
+            <view class="circleOfDynamic-title">
+                <text class="circleOfDynamic-title-text">签到动态</text>
+                <van-button type="info" hairline plain round size="small">全部</van-button>
+                <van-button  hairline plain round size="small">今天</van-button>
+                <van-button  hairline plain round size="small">选择日期</van-button>
+            </view>
+            <view class="circleOfDynamic-split"></view>
+			<view wx:for="{{joined}}" wx:key="index" class="joined-item" id="{{item.id}}">
+            </view>
+
+        </view>
+    </view>
+</view>

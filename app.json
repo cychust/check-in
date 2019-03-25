@@ -1,8 +1,10 @@
 {
 	"pages": [
+		"pages/detail/index",
+		"pages/new-check-in/index",
 		"pages/index/index",
 		"pages/logs/logs",
-		"pages/list/index",
+	
 		"pages/profile/index"
 	],
 	"window": {
@@ -24,13 +26,13 @@
 				"text": "我的签到"
 			},
 			{
-				"pagePath": "pages/list/index",
+				"pagePath": "pages/new-check-in/index",
 				"iconPath": "./images/new_check_in.png",
 				"selectedIconPath": "./images/new_check_in_active.png",
 				"text": "新建签到"
 			},
 			{
-				"pagePath": "pages/profile/index",
+				"pagePath": "pages/detail/index",
 				"iconPath": "./images/notice.png",
 				"selectedIconPath": "./images/notice_active.png",
 				"text": "我的消息"
@@ -55,6 +57,8 @@
 		"van-icon": "./miniprogram_npm/vant-weapp/icon/index",
 		"van-search": "./miniprogram_npm/vant-weapp/search/index",
 		"van-card": "./miniprogram_npm/vant-weapp/card/index",
-		"van-popup": "./miniprogram_npm/vant-weapp/popup/index"
+		"van-popup": "./miniprogram_npm/vant-weapp/popup/index",
+		"van-row": "./miniprogram_npm/vant-weapp/row/index",
+		"van-col": "./miniprogram_npm/vant-weapp/col/index"
 	}
 }

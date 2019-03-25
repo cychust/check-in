@@ -3,7 +3,7 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  color: #777;
+  /* color: #777; */
 }
 
 .ellipsis {
