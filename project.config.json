@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
-	"appid": "touristappid",
-	"projectname": "%2Fhome%2Fcyc%2Fusr%2Fprojects%2Fwx%2Fcheck-in",
+	"appid": "wx0a2792580b791b67",
+	"projectname": "check-in-go",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,8 +32,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "a",
+					"pathName": "pages/index/index",
+					"scene": "1001"
+				}
+			]
 		}
 	}
 }
