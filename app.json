@@ -1,64 +1,63 @@
 {
-	"pages": [
-		"pages/detail/index",
-		"pages/new-check-in/index",
-		"pages/index/index",
-		"pages/logs/logs",
-	
-		"pages/profile/index"
-	],
-	"window": {
-		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#fff",
-		"navigationBarTitleText": "WeChat",
-		"navigationBarTextStyle": "black"
-	},
-	"tabBar": {
-		"color": "#696969",
-		"selectedColor": "#1296db",
-		"backgroundColor": "#fff",
-		"borderStyle": "black",
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"iconPath": "./images/my_check_in.png",
-				"selectedIconPath": "./images/my_check_in_active.png",
-				"text": "我的签到"
-			},
-			{
-				"pagePath": "pages/new-check-in/index",
-				"iconPath": "./images/new_check_in.png",
-				"selectedIconPath": "./images/new_check_in_active.png",
-				"text": "新建签到"
-			},
-			{
-				"pagePath": "pages/detail/index",
-				"iconPath": "./images/notice.png",
-				"selectedIconPath": "./images/notice_active.png",
-				"text": "我的消息"
-			},
-			{
-				"pagePath": "pages/profile/index",
-				"iconPath": "./images/profile.png",
-				"selectedIconPath": "./images/profile_active.png",
-				"text": "个人中心"
-			}
-		]
-	},
-	"usingComponents": {
-		"van-button": "./miniprogram_npm/vant-weapp/button/index",
-		"van-toast": "./miniprogram_npm/vant-weapp/toast/index",
-		"van-tab": "./miniprogram_npm/vant-weapp/tab/index",
-		"van-tabs": "./miniprogram_npm/vant-weapp/tabs/index",
-		"van-cell": "./miniprogram_npm/vant-weapp/cell/index",
-		"van-cell-group": "./miniprogram_npm/vant-weapp/cell-group/index",
-		"van-loading": "./miniprogram_npm/vant-weapp/loading/index",
-		"van-dialog": "./miniprogram_npm/vant-weapp/dialog/index",
-		"van-icon": "./miniprogram_npm/vant-weapp/icon/index",
-		"van-search": "./miniprogram_npm/vant-weapp/search/index",
-		"van-card": "./miniprogram_npm/vant-weapp/card/index",
-		"van-popup": "./miniprogram_npm/vant-weapp/popup/index",
-		"van-row": "./miniprogram_npm/vant-weapp/row/index",
-		"van-col": "./miniprogram_npm/vant-weapp/col/index"
-	}
+  "pages": [
+    "pages/detail/index",
+    "pages/new-check-in/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/profile/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#696969",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/my_check_in.png",
+        "selectedIconPath": "./images/my_check_in_active.png",
+        "text": "我的签到"
+      },
+      {
+        "pagePath": "pages/new-check-in/index",
+        "iconPath": "./images/new_check_in.png",
+        "selectedIconPath": "./images/new_check_in_active.png",
+        "text": "新建签到"
+      },
+      {
+        "pagePath": "pages/detail/index",
+        "iconPath": "./images/notice.png",
+        "selectedIconPath": "./images/notice_active.png",
+        "text": "我的消息"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "iconPath": "./images/profile.png",
+        "selectedIconPath": "./images/profile_active.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "./miniprogram_npm/vant-weapp/button/index",
+    "van-toast": "./miniprogram_npm/vant-weapp/toast/index",
+    "van-tab": "./miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "./miniprogram_npm/vant-weapp/tabs/index",
+    "van-cell": "./miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "./miniprogram_npm/vant-weapp/cell-group/index",
+    "van-loading": "./miniprogram_npm/vant-weapp/loading/index",
+    "van-dialog": "./miniprogram_npm/vant-weapp/dialog/index",
+    "van-icon": "./miniprogram_npm/vant-weapp/icon/index",
+    "van-search": "./miniprogram_npm/vant-weapp/search/index",
+    "van-card": "./miniprogram_npm/vant-weapp/card/index",
+    "van-popup": "./miniprogram_npm/vant-weapp/popup/index",
+    "van-row": "./miniprogram_npm/vant-weapp/row/index",
+    "van-col": "./miniprogram_npm/vant-weapp/col/index"
+  }
 }
