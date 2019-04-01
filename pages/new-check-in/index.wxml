@@ -1,12 +1,16 @@
 <!--pages/list/index.wxml-->
 <view class="container">
-  <view class="main">
-    <view class="create-new-check-in" bindtap="bindCreateGroup">
-      <image src="/images/create-new-check-in.png"></image>
+    <view class="main">
+        <view class="create-new-check-in" bindtap="bindPopupShow">
+            <image src="/images/create-new-check-in.png"></image>
+        </view>
+        <view class="share">
+            <van-cell title="小小签到" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/my_check_in.png" is-link color="blue" size="large" value="推荐给好友" />
+        </view>
     </view>
-    <view class="share">
-      <van-cell title="小小签到" icon="https://raw.githubusercontent.com/cychust/check-in/master/images/my_check_in.png" is-link color="blue" size="large" value="推荐给好友" />
-    </view>
-
-  </view>
+    <van-popup show="{{ show }}" position="right" overlay="{{ false }}" bind:close="onClose">
+        <van-field class="title-field" value="{{ title }}" placeholder="请输入签到标题" border="{{ true }}" bind:change="onChange" />
+        <van-button class="confirm-btn" type="info" bind:click="bindCreateGroup">确认</van-button>
+    </van-popup>
+    <van-loading color="#fff" show="{{loading_show}}" />
 </view>
