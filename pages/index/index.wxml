@@ -23,11 +23,11 @@
     <view class='tabs'>
       <van-tabs bind:change="onChange" swipeable>
         <van-tab title="进行中">
-          <view wx:for="{{joined}}" wx:key="index" class="joined-item" id="{{item.id}}">
+          <view wx:for="{{groupsInfo}}" wx:key="index" class="joined-item" id="{{item.id}}">
             <view class="item-l ">
               <image src="{{item.image}}" />
               <view class="item-number">
-                <text class="item-number-text ">{{item.title}}人参与</text>
+                <text class="item-number-text ">{{item.code}}人参与</text>
               </view>
             </view>
             <view class="item-r">

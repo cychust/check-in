@@ -28,8 +28,9 @@ Page({
     });
   },
   moreBtnClicked: function(e) {
+    console.log(e)
     wx.showToast({
-      title: e.currentTarget.dataset.item.name
+      title: e.currentTarget.dataset.item.title
     })
     this.popupOpen();
   },
@@ -59,11 +60,15 @@ Page({
       responseType: 'text',
       success: function(res) {
         console.log(res)
-        that.groupsInfo = res.data.data.own_groups
-        console.log(that.groupsInfo)
+        that.setData({
+          groupsInfo: res.data.data.own_groups
+        })
+        console.log(res.data.data.own_groups)
       },
       fail: function(res) {},
-      complete: function(res) {},
+      complete: function(res) {
+        wx.hideLoading()
+      },
     })
   },
   doLogin: function(data) {
@@ -103,6 +108,10 @@ Page({
     wx.getSetting({
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
+          wx.showLoading({
+            title: 'aaaaa',
+            mask: true,
+          })
           wx.getUserInfo({
             success: function(data) {
               // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
@@ -127,6 +136,7 @@ Page({
                 // this.doLogin()
                 this.doLogin(data)
                 that.getGroupsInfo()
+
               }
             }
           });
