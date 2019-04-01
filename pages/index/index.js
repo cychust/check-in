@@ -122,7 +122,10 @@ Page({
             wx.setStorageSync("jwt_token", "Bearer " + res.data.data["jwt_token"])
             console.log("插入小程序登录用户信息成功！");
             that.getGroupsInfo()
-          }
+          },
+		  fail: function(res){
+			  wx.hideLoading()
+		  }
         })
       }
     })
