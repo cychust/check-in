@@ -29,9 +29,32 @@ Page({
   },
   moreBtnClicked: function(e) {
     console.log(e)
-    wx.showToast({
-      title: e.currentTarget.dataset.item.title
+    var that=this
+    // wx.showToast({
+    //   title: e.currentTarget.dataset.item.title
+    // })
+    var jwt = wx.getStorageSync('jwt_token')
+    wx.request({
+      url: 'http://127.0.0.1:3000/api/v1/group/delete',
+      data: {
+        "group_id":e.currentTarget.dataset.item.id,
+        "owner_id": e.currentTarget.dataset.item.owner_id
+      },
+      header: {
+        'content-type': 'application/json',
+        'authorization': jwt,
+      },
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res)
+        that.getGroupsInfo()
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
+
     this.popupOpen();
   },
   popupOpen() {
@@ -72,6 +95,7 @@ Page({
     })
   },
   doLogin: function(data) {
+    var that = this
     console.log(data)
     wx.login({
       success: res => {
@@ -97,6 +121,7 @@ Page({
             console.log(res.data.data["jwt_token"])
             wx.setStorageSync("jwt_token", "Bearer " + res.data.data["jwt_token"])
             console.log("插入小程序登录用户信息成功！");
+            that.getGroupsInfo()
           }
         })
       }
@@ -118,24 +143,21 @@ Page({
               // 根据自己的需求有其他操作再补充
               // 我这里实现的是在用户授权成功后，调用微信的 wx.login 接口，从而获取code
               let loginFlag = wx.getStorageSync('jwt_token');
-
               if (loginFlag) {
                 wx.checkSession({
                   success: function(res) {
-                    // that.doLogin(data)
+                    console.log("1233")
                     that.getGroupsInfo()
                   },
                   fail: function() {
                     // this.doLogin()
                     that.doLogin(data)
-                    that.getGroupsInfo()
                   }
                 });
               } else {
                 // 登录
                 // this.doLogin()
                 this.doLogin(data)
-                that.getGroupsInfo()
 
               }
             }
@@ -151,8 +173,11 @@ Page({
     });
   },
   onShow: function() {
-    // var that=this;
-    // that.getGroupsInfo()
+    let loginFlag = wx.getStorageSync('jwt_token');
+    if (loginFlag) {
+      var that = this;
+      that.getGroupsInfo()
+    }
   },
   bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
