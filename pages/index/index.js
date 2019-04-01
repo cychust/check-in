@@ -7,6 +7,7 @@ Page({
     show: false,
     motto: 'Hello World',
     userInfo: {},
+    groupsInfo: [],
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     joined: [{
@@ -14,10 +15,6 @@ Page({
       image: "/images/userinfo_bg.png",
       number: 0,
       title: "每日英语"
-    }, {
-      name: "嗯",
-      image: "/images/userinfo_bg.png",
-      number: 0
     }],
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -46,11 +43,35 @@ Page({
       show: false
     })
   },
-  doLogin(data) {
+  getGroupsInfo: function() {
+    var that = this;
+    var jwt = wx.getStorageSync('jwt_token')
+    console.log("11111")
+    wx.request({
+      url: 'http://127.0.0.1:3000/api/v1/group/list',
+      data: '',
+      header: {
+        'content-type': 'application/json',
+        'authorization': jwt,
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res)
+        that.groupsInfo = res.data.data.own_groups
+        console.log(that.groupsInfo)
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  doLogin: function(data) {
+    console.log(data)
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res.code)
+        // console.log(res.code)
         wx.request({
           url: 'http://127.0.0.1:3000/api/v1/login',
           method: "POST",
@@ -67,8 +88,9 @@ Page({
           },
           success: function(res) {
             //从数据库获取用户信息
+            console.log(res)
             console.log(res.data.data["jwt_token"])
-            wx.setStorageSync("jwt", res.data.data["jwt_token"])
+            wx.setStorageSync("jwt_token", "Bearer " + res.data.data["jwt_token"])
             console.log("插入小程序登录用户信息成功！");
           }
         })
@@ -82,25 +104,29 @@ Page({
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
-            success: function(res) {
+            success: function(data) {
               // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
               // 根据自己的需求有其他操作再补充
               // 我这里实现的是在用户授权成功后，调用微信的 wx.login 接口，从而获取code
-              let loginFlag = wx.getStorageSync('jwt');
+              let loginFlag = wx.getStorageSync('jwt_token');
+
               if (loginFlag) {
                 wx.checkSession({
-                  success: function() {
-
+                  success: function(res) {
+                    // that.doLogin(data)
+                    that.getGroupsInfo()
                   },
                   fail: function() {
                     // this.doLogin()
+                    that.doLogin(data)
+                    that.getGroupsInfo()
                   }
                 });
               } else {
                 // 登录
                 // this.doLogin()
-                console.log("sssssssssss")
-
+                this.doLogin(data)
+                that.getGroupsInfo()
               }
             }
           });
@@ -114,7 +140,10 @@ Page({
       }
     });
   },
-
+  onShow: function() {
+    // var that=this;
+    // that.getGroupsInfo()
+  },
   bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮

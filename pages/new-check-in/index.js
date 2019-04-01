@@ -8,6 +8,30 @@ Page({
   
   },
 
+  bindCreateGroup:function(e){
+    console.log(e.currentTarget.dataset)
+    // e.currentTarget.dataset.item.name
+    var jwt = wx.getStorageSync('jwt_token')
+    console.log(jwt)
+    wx.request({
+      url: 'http://127.0.0.1:3000/api/v1/group',
+      data: {"title":"今日英语"},
+      header: {
+        'content-type': 'application/json',
+        'authorization': jwt,
+      },
+      method: "POST",
+      // dataType: 'json',
+      // responseType: 'text',
+      success: function(res) {
+        console.log(res)
+      },
+      fail: function(res) {
+        console.debug(res)
+      },
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
